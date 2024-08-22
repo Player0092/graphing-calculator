@@ -1,9 +1,4 @@
-setInterval(function() {console.log(window.innerWidth)},100);
-
-
-
-
-
+// Author: Abuabkr batalvi
 var z = 1 / 4;
 var i, j, x, y;
 let isDragging = false;
@@ -64,13 +59,13 @@ function adjustLimits() {
 }
 
 function drawCurve() {
-    var k=-210;
+    var k = -210;
 
     ctc.fillStyle = "grey";
     ctc.fillRect(0, 0, 1920, 1080);
 
     ctc.beginPath();
-    for (let j = -5; j <= n-k; j++) {
+    for (let j = -5; j <= n - k; j++) {
         spacingX = j / (n);
         mathX = spacingX * (xMax - xMin) + xMin;
         mathY = evaluate(mathX);
@@ -78,13 +73,13 @@ function drawCurve() {
 
         x = spacingX * (c.width);
         y = spacingY * (c.height);
-        
-        ctc.lineTo(x+k, y);
+
+        ctc.lineTo(x + k, y);
 
         if (j === 0) {
-            ctc.moveTo(x+k, y);
+            ctc.moveTo(x + k, y);
         } else {
-            ctc.lineTo(x+k, y);
+            ctc.lineTo(x + k, y);
         }
     }
     ctc.strokeStyle = "red"
@@ -129,3 +124,7 @@ c.addEventListener('mouseleave', () => {
     xShift = 0;
     yShift = 0;
 });
+
+function tabSize() {
+    setInterval(function () { console.log(window.innerWidth) }, 100);
+}
